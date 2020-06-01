@@ -10,10 +10,12 @@ public class ListGenerator {
         ints = toSimpleArray(generate(c));
     }
 
+    // generate list of random unsigned int from 0 to 100
     private List<Integer> generate(int c){
-        return Stream.generate(() -> new Random().nextInt(100)).limit(c).collect(Collectors.toList());
+        return Stream.generate(() -> new Random(47).nextInt(100)).limit(c).collect(Collectors.toList());
     }
 
+    // transform list to int[]
     private int[] toSimpleArray(List<Integer> list){
         ints = new int[list.size()];
         for (int i = 0; i < list.size(); i++) {
@@ -26,11 +28,12 @@ public class ListGenerator {
         return ints;
     }
 
+    // divide one array into equal parts
     public static int[][] getRankedInts(int worldSize, int[] ints){
         int rankSize = ints.length/worldSize;
         int[][] ints1 = new int[worldSize][rankSize];
         for (int i =0, x = 0; i < worldSize; i++, x+=rankSize) {
-            if (rankSize >= 0) System.arraycopy(ints, 0 + x, ints1[i], 0, rankSize);
+            if (rankSize >= 0) System.arraycopy(ints, x, ints1[i], 0, rankSize);
         }
         return ints1;
     }

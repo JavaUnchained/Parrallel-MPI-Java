@@ -1,5 +1,7 @@
 public class MergeSort {
 
+
+    // merge sorting
     public static int [] sortArray(int[] arrayA){
         if (arrayA == null || arrayA.length < 2) {
             return arrayA;
@@ -40,6 +42,7 @@ public class MergeSort {
         return b;
     }
 
+    // for final merge
     public static int[][] spliting(int [][] subArr){
         if (subArr.length == 1) {
             return subArr;
