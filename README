@@ -1,1 +1,7 @@
-README
+In configurations:
+Compiler key: -jar $MPJ_HOME$/lib/starter.jar Parallel -np 6
+Eniv. Variable: MPJ_HOME=C:/mpj
+MainClass: runtime.starter.MPJRun
+
+Project structure:
+libs - mpi.jar, starter.jar (from local), junit 4.12 (from maven)
