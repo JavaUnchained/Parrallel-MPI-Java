@@ -1,6 +1,8 @@
+import Sorting.MergeSort;
+import helpers.ListGenerator;
 import mpi.MPI;
 import java.util.Arrays;
-public class Main {
+public class Parallel {
     public static void main(String[] args) {
         long timeStart= System.currentTimeMillis();
 
@@ -35,7 +37,7 @@ public class Main {
 
         if (rank == root) {
             // finally merge
-//            int[][] result = MergeSort.spliting(ListGenerator.getRankedInts(size, newRecBuffer));
+//            int[][] result = Sorting.MergeSort.spliting(helpers.ListGenerator.getRankedInts(size, newRecBuffer));
 //            System.out.printf("Sorted   :%s \n", Arrays.toString(result[0]));
             System.out.printf("Sorted   :%s \n", Arrays.toString(MergeSort.sortArray(newRecBuffer)));
 

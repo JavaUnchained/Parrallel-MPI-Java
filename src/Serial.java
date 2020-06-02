@@ -1,6 +1,9 @@
+import Sorting.MergeSort;
+import helpers.ListGenerator;
+
 import java.util.Arrays;
 
-public class NonPar {
+public class Serial {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
