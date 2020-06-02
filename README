@@ -1,3 +1,5 @@
+Parallel and serial merge soring.
+
 In configurations:
 Compiler key: -jar $MPJ_HOME$/lib/starter.jar Parallel -np 6
 Eniv. Variable: MPJ_HOME=C:/mpj
