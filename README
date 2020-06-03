@@ -1,4 +1,4 @@
-Parallel and serial merge soring, using MPI in Java.
+Parallel and serial merge sorting, using MPI in Java.
 
 In configurations:
 Compiler key: -jar $MPJ_HOME$/lib/starter.jar Parallel -np 6
