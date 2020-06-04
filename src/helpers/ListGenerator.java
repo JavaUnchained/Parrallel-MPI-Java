@@ -30,6 +30,11 @@ public class ListGenerator {
         return ints;
     }
 
+    public static int getLength(){
+        return 40_000_000;
+    }
+
+
     // divide one array into equal parts
     public static int[][] getRankedInts(int worldSize, int[] ints){
         int rankSize = ints.length/worldSize;

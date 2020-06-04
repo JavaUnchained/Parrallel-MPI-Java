@@ -13,7 +13,7 @@ public class Parallel {
         int rank = MPI.COMM_WORLD.Rank(), size = MPI.COMM_WORLD.Size(), root = 0;
         // length - length of array which we wanna sort
         // unitSize - length of one process
-        int length = 56_000_000, unitSize = length / size;
+        int length = ListGenerator.getLength(), unitSize = length / size;
         // send - what we send from root to all
         // recv -what we receive from root
         // newrecv - what we receive in root from all
