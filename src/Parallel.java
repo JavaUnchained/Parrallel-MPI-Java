@@ -4,8 +4,6 @@ import mpi.MPI;
 import java.util.Arrays;
 public class Parallel {
     public static void main(String[] args) {
-        long timeStart= System.currentTimeMillis();
-
         // Init MPI
         MPI.Init(args);
         // rank - number of process
@@ -23,9 +21,9 @@ public class Parallel {
         if(rank == root){
             // generate random array
             sendBuffer = new ListGenerator(length).getInts();
-            System.out.printf("Shuffled: %s \n", Arrays.toString(sendBuffer));
+//            System.out.printf("Shuffled: %s \n", Arrays.toString(sendBuffer));
         }
-
+        long timeStart= System.currentTimeMillis();
         // sending parts of sendBuffer to all process
         MPI.COMM_WORLD.Scatter(sendBuffer, 0, unitSize, MPI.INT, recvBuffer, 0, unitSize, MPI.INT, root);
 
@@ -39,8 +37,8 @@ public class Parallel {
             // finally merge
 //            int[][] result = Sorting.MergeSort.spliting(helpers.ListGenerator.getRankedInts(size, newRecBuffer));
 //            System.out.printf("Sorted   :%s \n", Arrays.toString(result[0]));
-            System.out.printf("Sorted   :%s \n", Arrays.toString(MergeSort.sortArray(newRecBuffer)));
-
+//            System.out.printf("Sorted   :%s \n", Arrays.toString(MergeSort.sortArray(newRecBuffer)));
+            System.out.println("Sorted " + newRecBuffer.toString());
             // check time
             long timeStop = System.currentTimeMillis();
             System.out.printf("Time is: %d ms", timeStop - timeStart);

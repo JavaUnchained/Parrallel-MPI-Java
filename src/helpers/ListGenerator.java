@@ -14,7 +14,8 @@ public class ListGenerator {
 
     // generate list of random unsigned int from 0 to 100
     private List<Integer> generate(int c){
-        return Stream.generate(() -> new Random().nextInt(100)).limit(c).collect(Collectors.toList());
+        return Stream.generate(() -> new Random().nextInt(
+        )).limit(c).collect(Collectors.toList());
     }
 
     // transform list to int[]
