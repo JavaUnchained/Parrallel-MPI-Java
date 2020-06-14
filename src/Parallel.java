@@ -2,6 +2,10 @@ import Sorting.MergeSort;
 import helpers.ListGenerator;
 import mpi.MPI;
 import java.util.Arrays;
+
+import static Sorting.MergeSort.finMerge;
+import static Sorting.MergeSort.mergeArray;
+
 public class Parallel {
     public static void main(String[] args) {
         // Init MPI
@@ -36,7 +40,7 @@ public class Parallel {
         if (rank == root) {
             // finally merge
 //            int[][] result = Sorting.MergeSort.spliting(helpers.ListGenerator.getRankedInts(size, newRecBuffer));
-//            System.out.printf("Sorted   :%s \n", Arrays.toString(result[0]));
+            finMerge(ListGenerator.getRankedInts(size, newRecBuffer));
 //            System.out.printf("Sorted   :%s \n", Arrays.toString(MergeSort.sortArray(newRecBuffer)));
 //            newRecBuffer = MergeSort.sortArray(newRecBuffer);
             System.out.println("Sorted " + newRecBuffer.toString());

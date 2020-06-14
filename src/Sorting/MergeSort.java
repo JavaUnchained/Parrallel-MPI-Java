@@ -1,5 +1,8 @@
 package Sorting;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MergeSort {
 
 
@@ -44,7 +47,23 @@ public class MergeSort {
         return b;
     }
 
-    // for final merge
+    public static int[] finMerge(int [] ... arrs) {
+        if (arrs.length == 2) {
+            return mergeArray(arrs[0], arrs[1]);
+        }
+        int[][] narr1 = new int[1][arrs.length / 2];
+        int[][] narr2 = new int[1][arrs.length / 2];
+
+        for (int i = 0; i < arrs.length/2; i++) {
+            narr1[0][i] = arrs[0][i];
+        }
+        for (int i = arrs.length/2, j = 0; i < arrs.length-1; i++, j++) {
+            narr2[0][j] = arrs[0][i];
+        }
+        return finMerge(narr1[0], narr2[0]);
+    }
+
+    // for final merge]
     public static int[][] spliting(int [][] subArr){
         if (subArr.length == 1) {
             return subArr;
@@ -53,7 +72,7 @@ public class MergeSort {
         int[][] arr = new int[subArr.length/2][subArr[0].length * 2];
 
         for (int i = 0, j = 0; i < subArr.length; i+=2, j++) {
-            arr[j] = mergeArray(subArr[i], subArr[i + 1]);
+
         }
 
         return spliting(arr);
