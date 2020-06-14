@@ -38,6 +38,7 @@ public class Parallel {
 //            int[][] result = Sorting.MergeSort.spliting(helpers.ListGenerator.getRankedInts(size, newRecBuffer));
 //            System.out.printf("Sorted   :%s \n", Arrays.toString(result[0]));
 //            System.out.printf("Sorted   :%s \n", Arrays.toString(MergeSort.sortArray(newRecBuffer)));
+//            newRecBuffer = MergeSort.sortArray(newRecBuffer);
             System.out.println("Sorted " + newRecBuffer.toString());
             // check time
             long timeStop = System.currentTimeMillis();
