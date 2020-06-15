@@ -32,7 +32,7 @@ public class ListGenerator {
     }
 
     public static int getLength(){
-        return 20_000_000;
+        return 60_000_000;
     }
 
 
